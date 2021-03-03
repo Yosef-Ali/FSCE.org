@@ -77,38 +77,17 @@ export function FooterWithForm() {
 					templateColumns={{ sm: '1fr 1fr', md: '1fr 1fr 1fr 1fr 2fr' }}
 					spacing={28}
 				>
-					<Stack align={'flex-start'}>
-						<ListHeader>Product</ListHeader>
-						<Link href={'#'}>Overview</Link>
-						<Link href={'#'}>Features</Link>
-						<Link href={'#'}>Tutorials</Link>
-						<Link href={'#'}>Pricing</Link>
-						<Link href={'#'}>Releases</Link>
-					</Stack>
-					<Stack align={'flex-start'}>
-						<ListHeader>Company</ListHeader>
-						<Link href={'#'}>About</Link>
-						<Link href={'#'}>Press</Link>
-						<Link href={'#'}>Careers</Link>
-						<Link href={'#'}>Contact</Link>
-						<Link href={'#'}>Partners</Link>
-					</Stack>
-					<Stack align={'flex-start'}>
-						<ListHeader>Support</ListHeader>
-						<Link href={'#'}>Help Center</Link>
-						<Link href={'#'}>Terms of Service</Link>
-						<Link href={'#'}>Legal</Link>
-						<Link href={'#'}>Privacy Policy</Link>
-						<Link href={'#'}>Status</Link>
-					</Stack>
-					<Stack align={'flex-start'}>
-						<ListHeader>Follow Us</ListHeader>
-						<Link href={'#'}>Facebook</Link>
-						<Link href={'#'}>Twitter</Link>
-						<Link href={'#'}>Dribbble</Link>
-						<Link href={'#'}>Instagram</Link>
-						<Link href={'#'}>LinkedIn</Link>
-					</Stack>
+					{NAV_ITEMS.map(navItem => (
+						<Stack align={'flex-start'} key={navItem.label}>
+							<ListHeader>{navItem.label}</ListHeader>
+							{navItem.children &&
+								navItem.children.map(child => (
+									<Link href={'#'} key={child.label}>
+										{child.label}
+									</Link>
+								))}
+						</Stack>
+					))}
 					<Stack align={'flex-start'}>
 						<ListHeader>Stay up to date</ListHeader>
 						<Stack direction={'row'}>
@@ -121,8 +100,9 @@ export function FooterWithForm() {
 								}}
 							/>
 							<IconButton
-								bg={useColorModeValue('brand.400', 'brand.800')}
-								color={useColorModeValue('white', 'gray.800')}
+								colorScheme='brand'
+								//bg={useColorModeValue('brand.400', 'brand.800')}
+								//color={useColorModeValue('white')}
 								_hover={{
 									bg: 'brand.300',
 								}}
@@ -136,3 +116,104 @@ export function FooterWithForm() {
 		</Box>
 	);
 }
+const NAV_ITEMS = [
+	{
+		label: 'Product',
+		children: [
+			{
+				label: 'Overview',
+				href: '#',
+			},
+			{
+				label: 'Features',
+				href: '#',
+			},
+			{
+				label: 'Tutorials',
+				href: '#',
+			},
+			{
+				label: 'Pricing',
+				href: '#',
+			},
+			{
+				label: 'Releases',
+			},
+		],
+	},
+	{
+		label: 'Company',
+		children: [
+			{
+				label: 'About',
+				href: '#',
+			},
+			{
+				label: 'Press',
+				href: '#',
+			},
+			{
+				label: 'Careers',
+				href: '#',
+			},
+			{
+				label: 'Contacts',
+				href: '#',
+			},
+			{
+				label: 'Partners',
+				href: '#',
+			},
+		],
+	},
+	{
+		label: 'Support',
+		children: [
+			{
+				label: 'Help Center ',
+				href: '#',
+			},
+			{
+				label: 'Terms of Service',
+				href: '#',
+			},
+			{
+				label: 'Legal',
+				href: '#',
+			},
+			{
+				label: 'Privacy Police',
+				href: '#',
+			},
+			{
+				label: 'Status',
+				href: '#',
+			},
+		],
+	},
+	{
+		label: 'Follow Us',
+		children: [
+			{
+				label: 'Facebook ',
+				href: '#',
+			},
+			{
+				label: 'Twitter',
+				href: '#',
+			},
+			{
+				label: 'Dribbble',
+				href: '#',
+			},
+			{
+				label: 'Instagram',
+				href: '#',
+			},
+			{
+				label: 'Linkedin',
+				href: '#',
+			},
+		],
+	},
+];

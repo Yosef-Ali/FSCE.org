@@ -108,12 +108,9 @@ export function Header1() {
 						display={{ base: 'none', md: 'inline-flex' }}
 						fontSize={'sm'}
 						fontWeight={600}
-						color={'white'}
-						bg={'brand.400'}
+						colorScheme='brand'
 						href={'#'}
-						_hover={{
-							bg: 'brand.300',
-						}}
+						_hover={{ bg: useColorModeValue('brand.400', 'brand.300') }}
 					>
 						Sign Up
 					</Button>
@@ -137,7 +134,8 @@ const DesktopNav = () => {
 							<Link
 								href={(navItem.href = '#')}
 								fontSize={'sm'}
-								fontWeight={400}
+								fontWeight={500}
+								fontFamily={'mono'}
 								color={useColorModeValue('gray.600', 'gray.200')}
 								_hover={{
 									textDecoration: 'none',
