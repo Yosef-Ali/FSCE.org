@@ -12,7 +12,7 @@ import {
 	PopoverTrigger,
 	PopoverContent,
 	useColorModeValue,
-	useBreakpointValue,
+	useColorMode,
 	useDisclosure,
 } from '@chakra-ui/react';
 import {
@@ -21,10 +21,12 @@ import {
 	ChevronDownIcon,
 	ChevronRightIcon,
 } from '@chakra-ui/icons';
+import { IoMoon, IoSunny } from 'react-icons/io5';
 import { LogoOne } from '../ui/LogoOne';
 
 export function Header1() {
 	const { isOpen, onToggle } = useDisclosure();
+	const { colorMode, toggleColorMode } = useColorMode();
 
 	return (
 		<Box
@@ -76,8 +78,23 @@ export function Header1() {
 					flex={{ base: 1, md: 0 }}
 					justify={'flex-end'}
 					direction={'row'}
-					spacing={6}
+					alignItems={'center'}
+					spacing={{ base: 3, md: 6 }}
 				>
+					<IconButton
+						size={'sm'}
+						variant={'ghost'}
+						aria-label={'Toggle Color Mode'}
+						onClick={toggleColorMode}
+						mx={{ md: -2 }}
+						icon={
+							colorMode == 'light' ? (
+								<IoMoon size={18} />
+							) : (
+								<IoSunny size={18} />
+							)
+						}
+					/>
 					<Button
 						as={'a'}
 						fontSize={'sm'}
@@ -92,10 +109,10 @@ export function Header1() {
 						fontSize={'sm'}
 						fontWeight={600}
 						color={'white'}
-						bg={'pink.400'}
+						bg={'brand.400'}
 						href={'#'}
 						_hover={{
-							bg: 'pink.300',
+							bg: 'brand.300',
 						}}
 					>
 						Sign Up
@@ -162,13 +179,13 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
 			display={'block'}
 			p={2}
 			rounded={'md'}
-			_hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
+			_hover={{ bg: useColorModeValue('brand.50', 'gray.900') }}
 		>
 			<Stack direction={'row'} align={'center'}>
 				<Box>
 					<Text
 						transition={'all .3s ease'}
-						_groupHover={{ color: 'pink.400' }}
+						_groupHover={{ color: 'brand.400' }}
 						fontWeight={500}
 					>
 						{label}
@@ -184,7 +201,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
 					align={'center'}
 					flex={1}
 				>
-					<Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+					<Icon color={'brand.400'} w={5} h={5} as={ChevronRightIcon} />
 				</Flex>
 			</Stack>
 		</Link>
