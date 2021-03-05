@@ -8,10 +8,12 @@ import { HeroSplitScreen } from '../components/sections/HeroSplitScreen';
 import { CallToActionWithVideo } from '../components/sections/CallToActionWithVideo';
 import { GridListWithHeading } from '../components/sections/GridListWithHeading';
 import { FeaturesGroup } from '../components/sections/FeaturesGroup';
+import { NewsFeature } from '../components/sections/NewsFeature';
 
 const Index = () => (
 	<Container>
 		<Header1 />
+		<NewsFeature />
 		{/* <Hero /> */}
 		<HeroSplitScreen />
 		<FeaturesGroup />

@@ -12,6 +12,7 @@
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "framer-motion": "^2.9.4",
+    "google-font": "^1.0.1",
     "next": "latest",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",

@@ -5,24 +5,18 @@ import {
 	Link,
 	Stack,
 	Text,
-	useColorModeValue,
+	useColorModeValue as mode,
 	VisuallyHidden,
 	useColorMode,
 	Flex,
 } from '@chakra-ui/react';
-import {
-	FaInstagram,
-	FaTwitter,
-	FaYoutube,
-	FaFacebook,
-	FaFacebookF,
-} from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaYoutube, FaFacebookF } from 'react-icons/fa';
 import { LogoOne } from '../ui/LogoOne';
 
 const SocialButton = ({ children, label, href }) => {
 	return (
 		<chakra.button
-			bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+			bg={mode('blackAlpha.100', 'whiteAlpha.100')}
 			rounded={'full'}
 			w={8}
 			h={8}
@@ -34,7 +28,7 @@ const SocialButton = ({ children, label, href }) => {
 			justifyContent={'center'}
 			transition={'background 0.3s ease'}
 			_hover={{
-				bg: useColorModeValue('blackAlpha.300', 'whiteAlpha.300'),
+				bg: mode('blackAlpha.300', 'whiteAlpha.300'),
 			}}
 		>
 			<VisuallyHidden>{label}</VisuallyHidden>
@@ -46,8 +40,8 @@ const SocialButton = ({ children, label, href }) => {
 export function SmallFooter() {
 	return (
 		<Box
-			bg={useColorModeValue('gray.50', 'gray.900')}
-			color={useColorModeValue('gray.700', 'gray.200')}
+			bg={mode('gray.50', 'gray.900')}
+			color={mode('gray.700', 'gray.200')}
 			w='full'
 		>
 			<Container
@@ -55,13 +49,13 @@ export function SmallFooter() {
 				//maxW={'7xl'}
 				maxW={{ lg: 'container.xl' }}
 				py={4}
-				direction={{ base: 'column', md: 'row' }}
+				direction={{ base: 'column', lg: 'row' }}
 				spacing={4}
-				justify={{ base: 'center', md: 'space-between' }}
-				align={{ base: 'center', md: 'center' }}
+				justify={{ base: 'center', lg: 'space-between' }}
+				align={{ base: 'center', lg: 'center' }}
 				borderTop={1}
 				borderStyle={'solid'}
-				borderColor={useColorModeValue('gray.200', 'gray.700')}
+				borderColor={mode('gray.200', 'gray.700')}
 			>
 				<Flex>
 					<LogoOne
@@ -70,17 +64,23 @@ export function SmallFooter() {
 						cursor={'pointer'}
 					/>
 				</Flex>
-				<Text>© 2021 FSCE.org All rights reserved, Developed by Yosef Ali</Text>
+				<Text
+					fontSize={'smaller'}
+					fontFamily={'mono'}
+					color={mode('gray.500', 'gray.600')}
+				>
+					© 2021 FSCE.org All rights reserved, Developed by Yosef Ali
+				</Text>
 				<Stack direction={'row'} spacing={6}>
 					<SocialButton label={'Twitter'} href={'#'}>
-						<FaTwitter color={useColorModeValue('#4d5499', '#B9BDE0')} />
+						<FaTwitter color={mode('#4d5499', '#B9BDE0')} />
 					</SocialButton>
 					<SocialButton label={'YouTube'} href={'#'}>
-						<FaYoutube color={useColorModeValue('#4d5499', '#B9BDE0')} />
+						<FaYoutube color={mode('#4d5499', '#B9BDE0')} />
 					</SocialButton>
 
 					<SocialButton label={'FaceBook'} href={'#'}>
-						<FaFacebookF color={useColorModeValue('#4d5499', '#B9BDE0')} />
+						<FaFacebookF color={mode('#4d5499', '#B9BDE0')} />
 					</SocialButton>
 				</Stack>
 			</Container>

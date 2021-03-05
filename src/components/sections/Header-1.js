@@ -47,9 +47,9 @@ export function Header1() {
 				align={'center'}
 			>
 				<Flex
-					flex={{ base: 1, md: 'auto' }}
+					flex={{ base: 1, lg: 'auto' }}
 					ml={{ base: -2 }}
-					display={{ base: 'flex', md: 'none' }}
+					display={{ base: 'flex', lg: 'none' }}
 				>
 					<IconButton
 						onClick={onToggle}
@@ -69,7 +69,7 @@ export function Header1() {
 						<LogoOne w={{ base: '60px', md: '70px' }} color={'brand.500'} />
 					</Flex>
 
-					<Flex display={{ base: 'none', md: 'flex' }} ml={10} mb={-2}>
+					<Flex display={{ base: 'none', lg: 'flex' }} ml={10} mb={-2}>
 						<DesktopNav />
 					</Flex>
 				</Flex>
@@ -211,7 +211,7 @@ const MobileNav = () => {
 		<Stack
 			bg={useColorModeValue('white', 'gray.800')}
 			p={4}
-			display={{ md: 'none' }}
+			display={{ lg: 'none' }}
 		>
 			{NAV_ITEMS.map(navItem => (
 				<MobileNavItem key={navItem.label} {...navItem} />
