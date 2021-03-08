@@ -6,6 +6,11 @@ const fonts = {
 	heading: `'Montserrat', system-ui, sans-serif`,
 };
 
+const config = {
+	initialColorMode: 'light',
+	useSystemColorMode: false,
+};
+
 const theme = extendTheme({
 	colors: {
 		black: '#16161D',
@@ -23,6 +28,7 @@ const theme = extendTheme({
 		},
 	},
 	fonts,
+	config,
 });
 
 export default theme;

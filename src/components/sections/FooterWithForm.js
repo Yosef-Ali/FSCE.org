@@ -48,60 +48,65 @@ const ListHeader = ({ children }) => {
 
 export function FooterWithForm() {
 	return (
-		<Box>
-			<Container as={Stack} maxW={'6xl'} py={{ base: 5, lg: 10 }}>
-				<SimpleGrid
-					templateColumns={{
-						sm: '1fr ',
-						md: '2fr 2fr ',
-						lg: '1fr 1fr 1fr 1fr 2fr',
-					}}
-					spacingX={26}
-					spacingY={{ md: 16 }}
-				>
-					{NAV_ITEMS.map(navItem => (
-						<Stack align={'flex-start'} key={navItem.label}>
-							<ListHeader>{navItem.label}</ListHeader>
-							{navItem.children &&
-								navItem.children.map(child => (
-									<Link
-										href={'#'}
-										key={child.label}
-										fontSize={'sm'}
-										fontFamily={'mono'}
-										color={mode('gray.600', 'gray.500')}
-									>
-										{child.label}
-									</Link>
-								))}
-						</Stack>
-					))}
-					<Stack align={'flex-start'}>
-						<ListHeader>Stay up to date</ListHeader>
-						<Stack direction={'row'}>
-							<Input
-								placeholder={'Your email address'}
-								bg={mode('blackAlpha.100', 'whiteAlpha.100')}
-								border={0}
-								_focus={{
-									bg: 'whiteAlpha.300',
-								}}
-							/>
-							<IconButton
-								colorScheme='brand'
-								//bg={useColorModeValue('brand.400', 'brand.800')}
-								//color={useColorModeValue('white')}
-								_hover={{
-									bg: 'brand.300',
-								}}
-								aria-label='Subscribe'
-								icon={<BiMailSend />}
-							/>
-						</Stack>
+		<Container
+			maxW={{ lg: 'container.xl' }}
+			py={[ 5, 10 ]}
+			px={[ 4, 4, 8, 8, 0 ]}
+		>
+			<SimpleGrid
+				templateColumns={[ '1fr', '1fr', '2fr 2fr ', '1fr 1fr 1fr 1fr 1fr' ]}
+				spacing={[ 10, 8, 12, 0 ]}
+			>
+				{NAV_ITEMS.map(navItem => (
+					<Stack align={[ 'center', 'flex-start' ]} key={navItem.label}>
+						<ListHeader>{navItem.label}</ListHeader>
+						{navItem.children &&
+							navItem.children.map(child => (
+								<Link
+									href={'#'}
+									key={child.label}
+									fontSize={'sm'}
+									fontFamily={'mono'}
+									color={mode('gray.600', 'gray.500')}
+								>
+									{child.label}
+								</Link>
+							))}
 					</Stack>
-				</SimpleGrid>
-			</Container>
-		</Box>
+				))}
+				<Stack align={[ 'center', 'flex-start' ]}>
+					<ListHeader>Stay up to date</ListHeader>
+					<Text color={'gray.500'} pb={2}>
+						At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+						kasd gubergren.
+					</Text>
+					<Stack direction={'row'} flex='1' w='100%'>
+						<Input
+							placeholder={'Your email address'}
+							bg={mode('blackAlpha.100', 'whiteAlpha.100')}
+							border={0}
+							display='block'
+							flex='1'
+							w='100%'
+							_focus={{
+								bg: 'whiteAlpha.300',
+							}}
+						/>
+						{/* <Box bg='tomato' flex='1' w='100%'>
+							<Text>Box 3</Text>
+						</Box> */}
+						<IconButton
+							colorScheme='brand'
+							_hover={{
+								bg: 'brand.300',
+							}}
+							aria-label='Subscribe'
+							icon={<BiMailSend />}
+						/>
+					</Stack>
+				</Stack>
+			</SimpleGrid>
+		</Container>
 	);
 }
 const NAV_ITEMS = [

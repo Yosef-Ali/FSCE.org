@@ -1,5 +1,5 @@
-import { Box, SimpleGrid } from '@chakra-ui/react';
-import * as React from 'react';
+import { Box, SimpleGrid, Center, Text } from '@chakra-ui/react';
+
 import {
 	FcDoughnutChart,
 	FcMultipleDevices,
@@ -10,13 +10,18 @@ import { Feature } from './Feature';
 
 export const FeaturesGroup = () => {
 	return (
-		<Box as='section' py='24'>
+		<Box as='section' py='24' pos='relative'>
+			<Center pos='absolute' top={4} w='full'>
+				<Text fontFamily={'heading'} fontSize={'2xl'}>
+					Title
+				</Text>
+			</Center>
 			<Box
 				maxW={{ base: 'xl', md: '5xl' }}
 				mx='auto'
 				px={{ base: '6', md: '8' }}
 			>
-				<SimpleGrid columns={{ base: 1, md: 2 }} spacingX='10' spacingY='14'>
+				<SimpleGrid columns={{ base: 1, md: 2 }} spacing='14'>
 					<Feature title='Secure by default' icon={<FcPrivacy />}>
 						At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
 						kasd gubergren, no sea takimata sanctus.

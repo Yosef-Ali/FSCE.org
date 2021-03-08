@@ -25,7 +25,7 @@ const IMAGE = [
 export const NewsFeature = () => {
 	return (
 		<Box>
-			<Container as={Stack} maxW={'6xl'} py={6}>
+			<Container as={Stack} maxW={'6xl'} pt={6} pb={24}>
 				<SimpleGrid
 					templateColumns={{ base: '1fr ', md: '7fr 4fr' }}
 					spacing={4}
@@ -38,7 +38,7 @@ export const NewsFeature = () => {
 						boxShadow='2xl'
 					>
 						<Image
-							h={{ base: '30vh', md: '45vh' }}
+							h={{ base: '15em', md: 'full' }}
 							rounded={'lg'}
 							w={'full'}
 							src={IMAGE[0]}
@@ -64,61 +64,68 @@ export const NewsFeature = () => {
 							direction={'column'}
 							pos={'absolute'}
 							rounded={'lg'}
-							bottom={{ sm: 4, lg: 6 }}
+							bottom={[ 3, 6 ]}
 							zIndex={1000}
 							w={'full'}
-							h={'40%'}
-							px={{ sm: 4, lg: 6 }}
-							//mb={{ md: 4 }}
-							//align={'end'}
-							//bg={'yellow.200'}
+							h={[ '80%', '50%' ]}
+							px={[ 4, 6 ]}
 						>
 							<Spacer />
-							<Box
-							//bg={'tomato'}
-							//overflow={'hidden'}
-							>
+							<Box>
+								<Box>
+									<Flex py={4} maxW={'sm'} justify={'start'}>
+										<Text
+											color={useColorModeValue('brand.100', 'brand.700')}
+											textTransform={'uppercase'}
+											fontWeight={800}
+											fontSize={'sm'}
+											letterSpacing={1.1}
+										>
+											Blog
+										</Text>
+										<Text
+											color={useColorModeValue('brand.100', 'brand.700')}
+											textTransform={'uppercase'}
+											fontWeight={800}
+											fontSize={'sm'}
+											letterSpacing={1.1}
+											px={4}
+										>
+											02/Date/Year
+										</Text>
+									</Flex>
+								</Box>
 								<Text
-									color={useColorModeValue('brand.100', 'brand.700')}
-									textTransform={'uppercase'}
-									fontWeight={800}
-									fontSize={'sm'}
-									letterSpacing={1.1}
-								>
-									Blog
-								</Text>
-								<Heading
 									as={'text'}
 									mb={3}
 									w={{ sm: 3 / 4, lg: 2 / 3 }}
 									color={useColorModeValue('white', 'brand.100')}
-									fontSize={{ md: '2xl', lg: '2xl' }}
-									fontFamily={'body'}
+									fontSize={'2xl'}
+									fontFamily={'heading'}
+									lineHeight={{ sm: '1.2em', lg: 'normal' }}
 									noOfLines={2}
 									textShadow={'md'}
 								>
 									Boost your conversion rate Boost your conversion rate
-								</Heading>
+								</Text>
 								<Text
-									color={'gray.500'}
+									color={'gray.400'}
 									w={{ sm: 3 / 4, lg: 2 / 3 }}
-									lineHeight={{ sm: '1.2em', lg: 'normal' }}
-									noOfLines={[ 2, 2, 2, 3 ]}
-									fontSize={{ sm: 'sm', md: 'md', lg: 'normal' }}
+									lineHeight={{ sm: '1.2em', lg: '1.5em' }}
+									noOfLines={[ 1, 2, 2, 3 ]}
 								>
-									Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-									diam nonumy eirmod tempor invidunt ut labore et dolore magna
-									rebum krhtlkalskdngl dfnslkdjflk sdflskadnfl.
+									At vero eos et accusam et justo duo dolores et ea rebum. Stet
+									clita kasd gubergren, no sea takimata sanctus.
 								</Text>
 							</Box>
 						</Flex>
 					</Box>
 
-					<Box as={Stack} spacingY={4}>
+					<Box as={Stack} spacing={4}>
 						<Box boxShadow='2xl' pos={'relative'} role={'group'}>
 							<Image
 								rounded={'lg'}
-								h={{ base: '30vh', md: '22vh' }}
+								h={{ base: '15em', md: '15em' }}
 								w={'full'}
 								src={IMAGE[1]}
 								objectFit={'cover'}
@@ -143,36 +150,52 @@ export const NewsFeature = () => {
 								direction={'column'}
 								pos={'absolute'}
 								rounded={'lg'}
-								bottom={{ sm: 3, lg: 4 }}
+								bottom={[ 3, 4 ]}
 								zIndex={1000}
 								w={'full'}
-								h={'40%'}
-								px={{ sm: 3, lg: 4 }}
+								h={[ '80%', '50%' ]}
+								px={[ 3, 4 ]}
 							>
 								<Spacer />
 								<Box
 								//bg={'tomato'}
 								//overflow={'hidden'}
 								>
+									<Box>
+										<Flex py={2} maxW={'sm'} justify={'start'}>
+											<Text
+												color={useColorModeValue('brand.100', 'brand.700')}
+												textTransform={'uppercase'}
+												fontWeight={800}
+												fontSize={'sm'}
+												letterSpacing={1.1}
+											>
+												Blog
+											</Text>
+											<Text
+												color={useColorModeValue('brand.100', 'brand.700')}
+												textTransform={'uppercase'}
+												fontWeight={800}
+												fontSize={'sm'}
+												letterSpacing={1.1}
+												px={4}
+											>
+												02/Date/Year
+											</Text>
+										</Flex>
+									</Box>
 									<Text
-										color={useColorModeValue('brand.100', 'brand.500')}
-										textTransform={'uppercase'}
-										fontWeight={800}
-										fontSize={'sm'}
-										letterSpacing={1.1}
-									>
-										Blog
-									</Text>
-									<Heading
 										mb={1}
 										w={{ sm: 3 / 4, lg: 2 / 3 }}
 										color={useColorModeValue('white', 'brand.100')}
-										fontSize={{ md: '1xl', lg: '1xl' }}
-										fontFamily={'body'}
+										fontSize={'xl'}
+										fontFamily={'heading'}
+										lineHeight={{ sm: '1.2em', lg: 'normal' }}
 										noOfLines={2}
+										textShadow={'md'}
 									>
 										Boost your conversion rate boost your conversion rate
-									</Heading>
+									</Text>
 									<Text
 										color={'gray.500'}
 										w={{ sm: 3 / 4, lg: 2 / 3 }}
@@ -191,7 +214,7 @@ export const NewsFeature = () => {
 						<Box boxShadow='2xl' pos={'relative'} role={'group'}>
 							<Image
 								rounded={'lg'}
-								h={{ base: '30vh', md: '22vh' }}
+								h={{ base: '15em', md: '15em' }}
 								w={'full'}
 								src={IMAGE[0]}
 								objectFit={'cover'}
@@ -216,36 +239,52 @@ export const NewsFeature = () => {
 								direction={'column'}
 								pos={'absolute'}
 								rounded={'lg'}
-								bottom={{ sm: 3, lg: 4 }}
+								bottom={[ 3, 4 ]}
 								zIndex={1000}
 								w={'full'}
-								h={'40%'}
-								px={{ sm: 3, lg: 4 }}
+								h={[ '80%', '50%' ]}
+								px={[ 3, 4 ]}
 							>
 								<Spacer />
 								<Box
 								//bg={'tomato'}
 								//overflow={'hidden'}
 								>
+									<Box>
+										<Flex py={2} maxW={'sm'} justify={'start'}>
+											<Text
+												color={useColorModeValue('brand.100', 'brand.700')}
+												textTransform={'uppercase'}
+												fontWeight={800}
+												fontSize={'sm'}
+												letterSpacing={1.1}
+											>
+												Blog
+											</Text>
+											<Text
+												color={useColorModeValue('brand.100', 'brand.700')}
+												textTransform={'uppercase'}
+												fontWeight={800}
+												fontSize={'sm'}
+												letterSpacing={1.1}
+												px={4}
+											>
+												02/Date/Year
+											</Text>
+										</Flex>
+									</Box>
 									<Text
-										color={useColorModeValue('brand.100', 'brand.500')}
-										textTransform={'uppercase'}
-										fontWeight={800}
-										fontSize={'sm'}
-										letterSpacing={1.1}
-									>
-										Blog
-									</Text>
-									<Heading
 										mb={1}
 										w={{ sm: 3 / 4, lg: 2 / 3 }}
 										color={useColorModeValue('white', 'brand.100')}
-										fontSize={{ md: '1xl', lg: '1xl' }}
-										fontFamily={'body'}
+										fontSize={'xl'}
+										fontFamily={'heading'}
+										lineHeight={{ sm: '1.2em', lg: 'normal' }}
 										noOfLines={2}
+										textShadow={'md'}
 									>
 										Boost your conversion rate boost your conversion rate
-									</Heading>
+									</Text>
 									<Text
 										color={'gray.500'}
 										w={{ sm: 3 / 4, lg: 2 / 3 }}

@@ -68,6 +68,7 @@ export function SmallFooter() {
 					fontSize={'smaller'}
 					fontFamily={'mono'}
 					color={mode('gray.500', 'gray.600')}
+					textAlign={[ 'center', 'flex-start' ]}
 				>
 					© 2021 FSCE.org All rights reserved, Developed by Yosef Ali
 				</Text>
