@@ -6,15 +6,16 @@ import {
 	FcPrivacy,
 	FcTimeline,
 } from 'react-icons/fc';
+import { SectionTitle } from '../ui/SectionTitle';
 import { Feature } from './Feature';
+
+const sectionTitle = 'Our Features';
 
 export const FeaturesGroup = () => {
 	return (
 		<Box as='section' py='24' pos='relative'>
 			<Center pos='absolute' top={4} w='full'>
-				<Text fontFamily={'heading'} fontSize={'2xl'}>
-					Title
-				</Text>
+				<SectionTitle title={sectionTitle} />
 			</Center>
 			<Box
 				maxW={{ base: 'xl', md: '5xl' }}

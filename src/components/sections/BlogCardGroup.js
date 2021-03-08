@@ -10,6 +10,7 @@ import {
 	Center,
 } from '@chakra-ui/react';
 import { BlogCard } from '../ui/BlogCard';
+import { SectionTitle } from '../ui/SectionTitle';
 
 const data = [
 	{
@@ -50,12 +51,11 @@ const data = [
 	},
 ];
 export const BlogCardGroup = () => {
+	const sectionTitle = 'Latest Blog';
 	return (
 		<Box as='section' pos='relative'>
 			<Center pos='absolute' top={4} w='full'>
-				<Text fontFamily={'heading'} fontSize={'2xl'}>
-					Title
-				</Text>
+				<SectionTitle title={sectionTitle} />
 			</Center>
 			<Box
 				maxW={{ base: 'xl', md: '6xl' }}

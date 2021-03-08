@@ -282,41 +282,101 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
 	{
-		label: 'Inspiration',
+		label: 'Home',
+		href: '/',
+	},
+	{
+		label: 'Who We Are',
 		children: [
 			{
-				label: 'Explore Design Work',
+				label: 'Values and Principles',
 				subLabel: 'Trending Design to inspire you',
 				href: '#',
 			},
 			{
-				label: 'New & Noteworthy',
+				label: 'Vision and Mission',
+				subLabel: 'Up-and-coming Designers',
+				href: '#',
+			},
+			{
+				label: 'Board Members',
+				subLabel: 'Up-and-coming Designers',
+				href: '#',
+			},
+			{
+				label: 'Partners',
+				subLabel: 'Up-and-coming Designers',
+				href: '#',
+			},
+			{
+				label: 'Merits',
 				subLabel: 'Up-and-coming Designers',
 				href: '#',
 			},
 		],
 	},
 	{
-		label: 'Find Work',
+		label: 'What We Do',
 		children: [
 			{
-				label: 'Job Board',
+				label: 'Prevention and Promotion Program',
 				subLabel: 'Find your dream design job',
 				href: '#',
 			},
 			{
-				label: 'Freelance Projects',
+				label: 'Protection',
+				subLabel: 'An exclusive list for contract work',
+				href: '#',
+			},
+			{
+				label: 'Rehabilitation and Reintegration',
+				subLabel: 'An exclusive list for contract work',
+				href: '#',
+			},
+			{
+				label: 'Child Resource Center',
 				subLabel: 'An exclusive list for contract work',
 				href: '#',
 			},
 		],
 	},
 	{
-		label: 'Learn Design',
-		href: '#',
+		label: 'Where we Work',
+		children: [
+			{
+				label: 'City Area Program Offices',
+				subLabel: 'Addis Ababa',
+				href: '#',
+			},
+			{
+				label: 'Regional Area Program Offices',
+				subLabel: 'Adama, Bahirdar, Dessie',
+				href: '#',
+			},
+		],
 	},
 	{
-		label: 'Hire Designers',
-		href: '#',
+		label: 'Resources',
+		children: [
+			{
+				label: 'Reports and Reviews',
+				subLabel: 'An exclusive list for contract work',
+				href: '#',
+			},
+			{
+				label: 'FSCE Publications',
+				subLabel: 'An exclusive list for contract work',
+				href: '#',
+			},
+			{
+				label: 'Case Stories ',
+				subLabel: 'An exclusive list for contract work',
+				href: '#',
+			},
+		],
+	},
+	{
+		label: 'Contact Us',
+		href: '/contact_us',
 	},
 ];
