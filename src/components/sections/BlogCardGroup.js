@@ -10,6 +10,7 @@ import {
 	Center,
 } from '@chakra-ui/react';
 import { BlogCard } from '../ui/BlogCard';
+
 import { SectionTitle } from '../ui/SectionTitle';
 
 const data = [
@@ -52,18 +53,24 @@ const data = [
 ];
 export const BlogCardGroup = () => {
 	const sectionTitle = 'Latest Blog';
+	const lightM = 'brand.500';
+	const darkM = 'brand.200';
 	return (
-		<Box as='section' pos='relative'>
-			<Center pos='absolute' top={4} w='full'>
-				<SectionTitle title={sectionTitle} />
-			</Center>
-			<Box
-				maxW={{ base: 'xl', md: '6xl' }}
-				mx='auto'
-				px={{ base: '6', md: '8' }}
-				py={[ 18, 24 ]}
+		<Box
+			as='section'
+			py={[ 20 ]}
+			// bg='yellow.400'
+		>
+			<Center
+				w='full'
+				py={[ 20 ]}
+				mt={[ -20 ]}
+				//bg='yellow.100'
 			>
-				<SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing='6'>
+				<SectionTitle title={sectionTitle} light={lightM} dark={darkM} />
+			</Center>
+			<Box maxW={[ 'xl', '6xl' ]} mx='auto'>
+				<SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing='10'>
 					{data.map((data, idx) => <BlogCard key={idx} data={data} />)}
 				</SimpleGrid>
 			</Box>

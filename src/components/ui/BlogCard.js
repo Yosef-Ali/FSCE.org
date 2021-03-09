@@ -33,14 +33,13 @@ export const BlogCard = props => {
 				mt={-6}
 				mx={-6}
 				mb={6}
-				pos={'relative'}
 				overflow={'hidden'}
 			>
 				<Image src={imageUrl} layout={'fill'} />
 			</Box>
 			<Stack>
 				<Text
-					color={'green.500'}
+					color={useColorModeValue('brand.500', 'brand.200')}
 					textTransform={'uppercase'}
 					fontWeight={800}
 					fontFamily={'heading'}

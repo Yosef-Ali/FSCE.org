@@ -10,13 +10,18 @@ import {
 export const SectionTitle = props => {
 	return (
 		<Box>
-			<Text fontFamily={'heading'} fontSize={'2xl'}>
+			<Text
+				fontFamily={'heading'}
+				fontSize={'2xl'}
+				px={4}
+				color={mode(`${props.light}`, `${props.dark}`)}
+			>
 				{props.title}
 			</Text>
 			<HStack>
-				<Divider bg={mode('brand.500', 'brand.200')} />
-				<Circle w='3' h='3' bg={mode('brand.500', 'brand.200')} />
-				<Divider bg={mode('brand.500', 'brand.200')} />
+				<Divider bg={mode(`${props.light}`, `${props.dark}`)} />
+				<Circle w='3' h='3' bg={mode(`${props.light}`, `${props.dark}`)} />
+				<Divider bg={mode(`${props.light}`, `${props.dark}`)} />
 			</HStack>
 		</Box>
 	);

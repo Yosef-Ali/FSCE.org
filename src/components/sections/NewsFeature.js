@@ -25,7 +25,7 @@ const IMAGE = [
 export const NewsFeature = () => {
 	return (
 		<Box>
-			<Container as={Stack} maxW={'6xl'} pt={6} pb={24}>
+			<Container as={Stack} maxW={'6xl'} pt={6} pb={[ 5, 8 ]}>
 				<SimpleGrid
 					templateColumns={{ base: '1fr ', md: '7fr 4fr' }}
 					spacing={4}

@@ -10,17 +10,28 @@ import { SectionTitle } from '../ui/SectionTitle';
 import { Feature } from './Feature';
 
 const sectionTitle = 'Our Features';
+const lightM = 'brand.500';
+const darkM = 'brand.200';
 
 export const FeaturesGroup = () => {
 	return (
-		<Box as='section' py='24' pos='relative'>
-			<Center pos='absolute' top={4} w='full'>
-				<SectionTitle title={sectionTitle} />
+		<Box
+			as='section'
+			py={[ 20 ]}
+			//bg={'yellow.200'}
+		>
+			<Center
+				py={[ 20 ]}
+				mt={-20}
+				w='full'
+				// bg={'yellow.400'}
+			>
+				<SectionTitle title={sectionTitle} light={lightM} dark={darkM} />
 			</Center>
 			<Box
 				maxW={{ base: 'xl', md: '5xl' }}
 				mx='auto'
-				px={{ base: '6', md: '8' }}
+				px={{ base: '6', md: '24' }}
 			>
 				<SimpleGrid columns={{ base: 1, md: 2 }} spacing='14'>
 					<Feature title='Secure by default' icon={<FcPrivacy />}>

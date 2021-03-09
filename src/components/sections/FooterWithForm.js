@@ -61,7 +61,7 @@ export function FooterWithForm() {
 		>
 			<SimpleGrid
 				templateColumns={[ '1fr', '1fr', '2fr 2fr ', '1fr 1fr 1fr 1fr 1fr' ]}
-				spacing={[ 10, 8, 12, 4 ]}
+				spacing={[ 10, 8, 6, 8 ]}
 			>
 				{NAV_ITEMS.map(navItem => (
 					<Stack align={[ 'center', 'flex-start' ]} key={navItem.label}>
