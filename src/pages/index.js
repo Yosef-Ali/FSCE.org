@@ -7,7 +7,7 @@ import { FooterWithForm } from '../components/sections/FooterWithForm';
 
 import { FeaturesGroup } from '../components/sections/FeaturesGroup';
 import { NewsFeature } from '../components/sections/NewsFeature';
-import { LatestNews } from '../components/sections/LatestNews';
+//import { LatestNews } from '../components/sections/LatestNews';
 import { BlogCardGroup } from '../components/sections/BlogCardGroup';
 import { Events } from '../components/sections/Events';
 import { ImageGallery } from '../components/sections/ImageGallery';
