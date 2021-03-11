@@ -7,6 +7,7 @@ import {
 	Center,
 	HStack,
 	Circle,
+	Image,
 } from '@chakra-ui/react';
 import { SectionTitle } from '../ui/SectionTitle';
 import { IndicatorCircle } from '../ui/IndicatorCircle';
@@ -81,13 +82,18 @@ export const Events = () => {
 						</Button>
 					</Box>
 					<Box
-						w='full'
-						h='full'
-						py={48}
 						bg={useColorModeValue('gray.200', 'gray.700')}
 						rounded={'lg'}
 						boxShadow={'lg'}
-					/>
+					>
+						<Image
+							src={
+								'https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+							}
+							alt={'image of temp'}
+							rounded={'lg'}
+						/>
+					</Box>
 				</SimpleGrid>
 				<Center
 					w='full'

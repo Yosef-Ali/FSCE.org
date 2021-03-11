@@ -46,7 +46,12 @@ const SocialButton = ({ children, label, href }) => {
 
 const ListHeader = ({ children }) => {
 	return (
-		<Text fontWeight={'500'} fontSize={'md'} fontFamily={'mono'} mb={2}>
+		<Text
+			fontWeight={'500'}
+			fontSize={[ 'md', 'md', 'md', 'sm', 'md' ]}
+			fontFamily={'mono'}
+			mb={2}
+		>
 			{children}
 		</Text>
 	);
@@ -57,11 +62,16 @@ export function FooterWithForm() {
 		<Container
 			maxW={{ lg: 'container.xl' }}
 			py={[ 5, 10 ]}
-			px={[ 4, 4, 8, 8, 0 ]}
+			px={[ 4, 4, 8, 4, 0 ]}
 		>
 			<SimpleGrid
-				templateColumns={[ '1fr', '1fr', '2fr 2fr ', '1fr 1fr 1fr 1fr 1fr' ]}
-				spacing={[ 10, 8, 6, 8 ]}
+				templateColumns={[
+					'1fr',
+					'1fr',
+					'2fr 2fr ',
+					'2fr 2fr 2fr 2fr 2fr 2fr',
+				]}
+				spacing={[ 10, 18, 16, 8 ]}
 			>
 				{NAV_ITEMS.map(navItem => (
 					<Stack align={[ 'center', 'flex-start' ]} key={navItem.label}>
@@ -71,7 +81,7 @@ export function FooterWithForm() {
 								<Link
 									href={'#'}
 									key={child.label}
-									fontSize={'sm'}
+									fontSize={'.7em'}
 									fontFamily={'mono'}
 									color={mode('gray.600', 'gray.500')}
 								>
@@ -81,16 +91,16 @@ export function FooterWithForm() {
 					</Stack>
 				))}
 
-				<Stack justify={[ 'center', 'flex-start' ]} pr={[ 0, 0 ]}>
+				<Stack align={[ 'center', 'flex-start' ]}>
 					<ListHeader>Contact Us</ListHeader>
 
-					<Box>
+					<Stack align={[ 'center', 'flex-start' ]}>
 						<Flex color={mode('gray.500', 'brand.200')}>
-							<Icon as={BiMailSend} h={6} w={6} mr={2} />
+							<Icon as={BiMailSend} h={5} w={5} mr={1} />
 
 							<chakra.h1
-								px={2}
-								fontSize={'sm'}
+								px={1}
+								fontSize={'.7em'}
 								fontFamily={'mono'}
 								color={mode('gray.600', 'gray.500')}
 							>
@@ -98,48 +108,52 @@ export function FooterWithForm() {
 							</chakra.h1>
 						</Flex>
 						<Flex mt={2} color={mode('gray.500', 'brand.200')}>
-							<Icon as={MdLocalPhone} h={5} w={5} mr={2} />
+							<Icon as={MdLocalPhone} h={4} w={4} mr={2} />
 
 							<chakra.h4
-								px={2}
-								fontSize={'sm'}
+								fontSize={'.7em'}
 								fontFamily={'mono'}
 								color={mode('gray.500', 'gray.500')}
+								textAlign={[ 'center', 'left' ]}
 							>
-								+251 115 534 722, <br /> +251 115 524 294, <br />+251 115 523
-								548
+								<span>+251 115 534 722,</span>
+								<span> +251 115 524 294,</span>
+								<span> +251 115 523 548</span>
 							</chakra.h4>
 						</Flex>
 						<Flex mt={2} color={mode('gray.500', 'brand.200')}>
-							<Icon as={FaFax} h={5} w={5} mr={2} />
+							<Icon as={FaFax} h={4} w={4} mr={2} />
 
 							<chakra.h4
-								px={2}
-								fontSize={'sm'}
+								fontSize={'.7em'}
 								fontFamily={'mono'}
 								color={mode('gray.500', 'gray.500')}
 							>
 								+251 115 534 469
 							</chakra.h4>
 						</Flex>
-						<Flex mt={2} color={mode('gray.500', 'brand.200')}>
-							<Icon as={MdEmail} h={5} w={5} mr={2} />
+						<Flex
+							mt={2}
+							color={mode('gray.500', 'brand.200')}
+							justify={'center'}
+						>
+							<Icon as={MdEmail} h={4} w={4} mr={2} />
 
 							<chakra.h1
-								px={2}
-								fontSize={'sm'}
+								fontSize={'.7em'}
 								fontFamily={'mono'}
 								color={mode('gray.500', 'gray.500')}
+								textAlign={[ 'center', 'left' ]}
 							>
-								P.O.Box: 9562, Addis Ababa, Ethiopia,
+								<span>P.O.Box: 9562,</span> <span>Addis Ababa, Ethiopia,</span>
 							</chakra.h1>
 						</Flex>
-					</Box>
+					</Stack>
 				</Stack>
 
 				<Stack align={[ 'center', 'flex-start' ]}>
 					<chakra.h1
-						fontSize={'md'}
+						fontSize={[ 'md', 'md', 'md', 'sm', 'md' ]}
 						fontFamily={'mono'}
 						color={mode('gray.800', 'gray.300')}
 					>
@@ -149,7 +163,7 @@ export function FooterWithForm() {
 						{/* <Icon as={MdLocationOn} h={5} w={5} mr={2} /> */}
 
 						<chakra.h1
-							fontSize={'sm'}
+							fontSize={'.7em'}
 							fontFamily={'mono'}
 							color={mode('gray.500', 'gray.500')}
 							align={{ sm: 'center', md: 'flex-start' }}
@@ -191,75 +205,78 @@ export function FooterWithForm() {
 }
 const NAV_ITEMS = [
 	{
-		label: 'Product',
+		label: 'Who We Are',
 		children: [
 			{
-				label: 'Overview',
+				label: 'Values and Principles',
 				href: '#',
 			},
 			{
-				label: 'Features',
+				label: 'Vision and Mission',
 				href: '#',
 			},
 			{
-				label: 'Tutorials',
-				href: '#',
-			},
-			{
-				label: 'Pricing',
-				href: '#',
-			},
-			{
-				label: 'Releases',
-			},
-		],
-	},
-	{
-		label: 'Company',
-		children: [
-			{
-				label: 'About',
-				href: '#',
-			},
-			{
-				label: 'Press',
-				href: '#',
-			},
-			{
-				label: 'Careers',
-				href: '#',
-			},
-			{
-				label: 'Contacts',
+				label: 'Board Members',
 				href: '#',
 			},
 			{
 				label: 'Partners',
 				href: '#',
 			},
+			{
+				label: 'Merits',
+				href: '#',
+			},
 		],
 	},
 	{
-		label: 'Support',
+		label: 'What We Do',
 		children: [
 			{
-				label: 'Help Center ',
+				label: 'Prevention and Promotion Program',
 				href: '#',
 			},
 			{
-				label: 'Terms of Service',
+				label: 'Protection',
 				href: '#',
 			},
 			{
-				label: 'Legal',
+				label: 'Rehabilitation and Reintegration',
 				href: '#',
 			},
 			{
-				label: 'Privacy Police',
+				label: 'Child Resource Center',
+				href: '#',
+			},
+		],
+	},
+	{
+		label: 'Where we Work',
+		children: [
+			{
+				label: 'City Area Program Offices',
 				href: '#',
 			},
 			{
-				label: 'Status',
+				label: 'Regional Area Program Offices',
+				href: '#',
+			},
+		],
+	},
+	{
+		label: 'Resources',
+		children: [
+			{
+				label: 'Reports and Reviews',
+				href: '#',
+			},
+			{
+				label: 'FSCE Publications',
+				subLabel: 'An exclusive list for contract work',
+				href: '#',
+			},
+			{
+				label: 'Case Stories ',
 				href: '#',
 			},
 		],

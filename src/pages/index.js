@@ -5,12 +5,13 @@ import { Header1 } from '../components/sections/Header-1';
 import { SmallFooter } from '../components/sections/SmallFooter';
 import { FooterWithForm } from '../components/sections/FooterWithForm';
 
-import { GridListWithHeading } from '../components/sections/GridListWithHeading';
 import { FeaturesGroup } from '../components/sections/FeaturesGroup';
 import { NewsFeature } from '../components/sections/NewsFeature';
 import { LatestNews } from '../components/sections/LatestNews';
 import { BlogCardGroup } from '../components/sections/BlogCardGroup';
 import { Events } from '../components/sections/Events';
+import { ImageGallery } from '../components/sections/ImageGallery';
+import { GetInvolved } from '../components/sections/GetInvolved';
 
 const Index = () => (
 	<Container>
@@ -19,6 +20,8 @@ const Index = () => (
 		<BlogCardGroup />
 		<Events />
 		<FeaturesGroup />
+		<GetInvolved />
+		<ImageGallery />
 		<FooterWithForm />
 		<SmallFooter />
 	</Container>
